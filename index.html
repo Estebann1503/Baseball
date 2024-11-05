@@ -1,23 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Vue Template</title>
-  <!-- Import Styles -->
-  <link rel="stylesheet" href="./css/styles.css" />
-  <!-- Import Vue.js -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-</head>
-<body>
-  <div id="app">
-    <div class="nav-bar"></div>
-    <h1>{{ intro }}</h1>
-  </div>
-  <!-- Import App -->
-  <script src="./js/main.js"></script>
-  <!-- Mount App -->
-  <script>
-    const mountedApp = app.mount('#app')
-  </script>
-</body>
-</html>
+<div id="app">
+	<h1>Calculate Baseball Stats</h1>
+	<form action="#">
+
+		<h2>Pitching Stats</h2>
+		
+    <div class="pitching-stats-wrap">
+		
+      <div class="stat-block">
+        <label>Innings Pitched</label>
+        <input type="number" v-model.number="inningsPitched" id="inningsPitched" name="inningsPitched">
+       </div>
+
+      <div class="stat-block">
+        <label>Hits</label>
+        <input type="number" v-model.number="pHits" id="pHits" name="pHits">
+       </div>
+
+      <div class="stat-block"><label>Runs</label>
+        <input type="number" v-model.number="pRuns" id="pRuns" name="pRuns"></div>
+
+      <div class="stat-block"><label>BB</label>
+      <input type="number" v-model.number="pWalks" id="pWalks" name="pWalks"></div>
+
+
+      <div class="stat-block"><label>Earned Runs</label>
+      <input type="number" v-model.number="earnedRuns" id="earnedRuns" name="earnedRuns"></div>
+
+
+      
+    <div class="stat-block">
+        <span>ERA:</span>
+        <span id="era">{{era}}</span>
+    </div>  
+
+     <div class="stat-block">
+        <span>WHIP:</span>
+        <span id="whip">{{whip}}</span>
+     </div>
+        
+    </div>
+		<hr>
+
+		<h2>Hitting Stats</h2>
+    
+    <div class="batting-stats-wrap">
+
+		<div class="stat-block"><label>At Bats</label>
+		<input v-model.number="atBats" type="number" id="atBats" name="atBats" placeholder="0"></div>
+    
+    <div class="stat-block"><label>Runs</label>
+		<input v-model.number="bRuns" type="number" id="bRuns" name="bRuns" placeholder="0"></div>
+    
+		<div class="stat-block"><label>Hits</label>
+		<input v-model.number="hits" type="number" id="hits" name="hits" placeholder="0"></div>
+      
+   <div class="stat-block">
+    <label>BB</label>
+		<input v-model.number="bWalks" type="number" id="bWalks" name="bWalks" placeholder="0"></div>
+    
+     <div class="stat-block"><label>HBP</label>
+		<input v-model.number="hbp" type="number" id="hbp" name="hbp" placeholder="0"></div>
+    
+    <div class="stat-block"><label>2B</label>
+		<input v-model.number="doubles" type="number" id="doubles" name="doubles" placeholder="0"></div>
+    
+    <div class="stat-block"><label>3B</label>
+		<input v-model.number="triple" type="number" id="triple" name="triple" placeholder="0"></div>
+    
+    <div class="stat-block"><label>HR</label>
+		<input v-model.number="homeRun" type="number" id="homeRun" name="homeRun" placeholder="0"></div>
+    
+    <div class="stat-block"><label>RBI</label>
+		<input v-model.number="rbi" type="number" id="rbi" name="rbi" placeholder="0"></div>
+    
+    <div class="stat-block"><label>Sac Flys</label>
+		<input v-model.number="sacFlys" type="number" id="sacFlys" name="sacFlys" placeholder="0"></div>
+
+    <div class="stat-block">
+		  <span>Batting Ave: </span>
+		  <span id="battingAve">{{battingAve}}</span>
+    </div>
+    
+    <div class="stat-block">
+      <span>OBP:</span>
+		  <span id="onBasePact">{{onBasePact}}</span>
+    </div>
+    
+   </div>
+		<hr>
+
+	</form>
+	
